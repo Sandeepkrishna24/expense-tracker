@@ -21,13 +21,16 @@ A simple React app to track and manage personal expenses. Users can add, view, u
 ## Screenshots
 
 Main UI dashboard (Dark Mode):
-![Dashboard](screenshot1.jpg)
+![Dashboard]<img width="814" height="876" alt="screenshot1 png" src="https://github.com/user-attachments/assets/fd480b0a-d033-4bb1-ab1b-1ed5e106a4eb" />
+
 
 Empty state after clearing:
-![Empty State](screenshot2.jpg)
+![Empty State]<img width="833" height="860" alt="screenshot2 png" src="https://github.com/user-attachments/assets/87661295-9ce7-4f53-9fb5-1114122db51e" />
+
 
 Pie chart and categorized expenses:
-![Pie Chart and Expenses](screenshot3.jpg)
+![Pie Chart and Expenses]<img width="868" height="648" alt="screenshot3 png" src="https://github.com/user-attachments/assets/e03585a3-b9f9-4626-9e9b-272c0c19bd4a" />
+
 
 ---
 
