@@ -1,38 +1,217 @@
-.App {
-  text-align: center;
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background: #e5effa;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  max-width: 900px;
+  margin: 36px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(47,97,68,.10);
+  padding: 36px 32px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (max-width: 1000px) {
+  .container {
+    max-width: 98vw;
+    padding: 12px 6px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h1, h2 {
+  font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+  font-weight: 700;
+}
+
+h1 {
+  color: #2979ff;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+h2 {
+  color: #1b2530;
+  margin-top: 36px;
+}
+
+form {
+  margin-bottom: 22px;
+  background: #f7faff;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+input, select {
+  padding: 9px 12px;
+  margin: 6px 0;
+  border: 1px solid #d2e3f3;
+  border-radius: 5px;
+  margin-right: 10px;
+  background: #fff;
+}
+
+button {
+  padding: 8px 18px;
+  background: #2979ff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-left: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+button:hover {
+  background: #1c54b2;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #f0f5fa;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(47, 97, 68, 0.12);
   display: flex;
-  flex-direction: column;
+  align-items: center;
+}
+
+.total-expenses {
+  color: #2979ff;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.filter-block {
+  margin: 18px 0 12px 0;
+  background: #e6eef7;
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+.filter-block label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* ---- CATEGORY BADGES ---- */
+.category-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.9em;
+  font-weight: 600;
+  margin: 0 9px 0 7px;
+  color: #fff;
+}
+.category-Food { background: #4caf50; }
+.category-Travel { background: #2196f3; }
+.category-Entertainment { background: #ff9800; }
+.category-Utilities { background: #8e24aa; }
+.category-Others { background: #6d4c41; }
+
+/* ---- SLIDE-IN ANIMATION FOR EXPENSE ITEMS ---- */
+.expense-item {
+  animation: slideIn 0.3s ease-out;
+}
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-10px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+/* ---- MATERIAL ICON BUTTONS ---- */
+.icon-button {
+  padding: 8px;
+  border-radius: 50%;
+  margin-left: 8px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-width: 36px;
+  height: 36px;
+}
+.delete-btn {
+  background: #f44336;
+}
+.delete-btn:hover {
+  background: #d32f2f;
+}
+.edit-btn {
+  background: #ff9800;
+}
+.edit-btn:hover {
+  background: #f57c00;
+}
+.material-icons {
+  font-size: 18px;
 }
 
-.App-link {
-  color: #61dafb;
+/* ---- DARK MODE TOGGLE BUTTON ---- */
+.dark-toggle {
+  float: right;
+  margin-top: 8px;
+  margin-bottom: 10px;
+  padding: 8px 18px;
+  border-radius: 8px;
+  background: #f3f3f3;
+  color: #222;
+  border: none;
+  font-weight: 600;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+.dark-toggle:hover {
+  background: #e0e4ea;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* ---- DARK THEME STYLES ---- */
+.dark {
+  background: #181a21 !important;
+  color: #f5f6fa !important;
+}
+
+.dark h1, .dark h2, .dark .total-expenses {
+  color: #8ab4f8 !important;
+}
+
+.dark form, .dark .filter-block, .dark li {
+  background: #232946 !important;
+  color: #f5f6fa !important;
+  box-shadow: 0 2px 8px rgba(30,30,55,0.20);
+}
+
+.dark .category-badge.category-Food { background: #5ab487; }
+.dark .category-badge.category-Travel { background: #6099e8; }
+.dark .category-badge.category-Entertainment { background: #eaac6c; }
+.dark .category-badge.category-Utilities { background: #bb80c4; }
+.dark .category-badge.category-Others { background: #8d6656; }
+
+.dark input, .dark select {
+  background: #202338;
+  color: #f5f6fa;
+  border: 1px solid #353763;
+}
+.dark button, .dark .icon-button {
+  color: #fff !important;
+}
+
+.dark .icon-button.edit-btn { background: #ecc04e; }
+.dark .icon-button.edit-btn:hover { background: #e1a500; }
+.dark .icon-button.delete-btn { background: #e05468; }
+.dark .icon-button.delete-btn:hover { background: #a73646; }
+
+.dark .dark-toggle {
+  background: #313665;
+  color: #fff !important;
 }
